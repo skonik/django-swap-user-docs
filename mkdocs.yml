@@ -1,7 +1,10 @@
 site_name: django-user-swap documentation
 
 nav:
-    - Home 🏠: index.md
+    - overview 🚏:
+        - overview 🚏: index.md
+        - swap models 🔧: swap_models.md
+        - one time passwords 🧨: otp_models.md
 
 
 repo_name: artinnok/django-user-swap
@@ -10,6 +13,21 @@ repo_url: https://github.com/artinnok/django-user-swap
 theme:
   name: material
   language: en
+    # Palette toggle for light mode
+  palette:
+
+    - media: "(prefers-color-scheme: light)"
+      scheme: youtube
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+        primary: deep orange
   features:
     - content.code.annotate
     # - content.tabs.link
@@ -37,6 +55,7 @@ markdown_extensions:
   - def_list
   - footnotes
   - meta
+  - attr_list
   - md_in_html
   - toc:
       permalink: true
@@ -77,3 +96,9 @@ extra:
       link: https://github.com/artinnok/django-user-swap
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/django-swap-user/
+
+
+extra_css:
+  - stylesheets/extra.css
+
+edit_uri: ""
