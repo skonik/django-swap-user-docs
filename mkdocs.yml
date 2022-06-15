@@ -17,7 +17,7 @@ theme:
   palette:
 
     - media: "(prefers-color-scheme: light)"
-      scheme: youtube
+      scheme: special
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
