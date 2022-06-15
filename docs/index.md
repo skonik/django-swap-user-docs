@@ -2,6 +2,15 @@
 This package  allows you easily change your default user's fields to email or phone along with additional functionality such one time passwords.
 ✨🐍
 
+<div class="termy">
+
+```console
+$ pip install django-swap-user
+---> 100%
+Successfully installed django-swap-user
+```
+
+</div>
 
 ***
 :material-email-plus:/:material-phone-plus:

@@ -100,5 +100,13 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/termynal.css
+  - stylesheets/custom.css
+
+
+extra_javascript:
+  - javascript/termynal.js
+  - javascript/custom.js
+
 
 edit_uri: ""
