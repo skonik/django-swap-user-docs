@@ -1,5 +1,6 @@
 One time password(OTP) functionality allows you not to store passwords in your databases.
 It lets to generate passwords valid for a certain amount of time and usable only once.
+It uses redis to store and retrieve one time passwords.
 
 ![Email and Phone OTP](./media/images/django_user_swap_02.jpeg)
 
@@ -151,5 +152,35 @@ your `INSTALLED_APPS` to the one below:
 ### Email OTP showcase - login into the admin
 
 ![type:video](./media/videos/to_email_otp_admin.mp4)
+
+
+### Custom sender class
+By `sender` we mean class that sends your one time password over a specified transprot(using email, sms, push, etc).
+You can implement any custom sender class and use this as your transport backend.
+
+Example is shown below.
+``` python
+from swap_user.otp.senders import AbstractOTPSender
+
+
+class PushNotificationsOTPSender(AbstractOTPSender):
+    """
+    Sending code over push.
+    """
+
+    def send(self, receiver: str, otp: str, **kwargs):
+        PushAPI.send(to=receiver, title='Use this code', text=otp)
+
+```
+
+Then include your class path into the settings:
+``` python
+
+# settings.py
+SWAP_USER = {
+    "OTP_SENDER_CLASS": "<path_to_your_sender_class>",
+}
+
+```
 
 

@@ -1,10 +1,11 @@
 site_name: django-swap-user documentation
 
 nav:
-    - overview 🚏:
-        - overview 🚏: index.md
-        - swap models 🔧: swap_models.md
-        - one time passwords 🧨: otp_models.md
+    - 👥 django-swap-user:
+        - 🚏 overview: index.md
+        - 🔧 swap models: swap_models.md
+        - 🧨 one time passwords : otp_models.md
+        - ⚙️ settings: settings.md
 
 
 repo_name: artinnok/django-swap-user
