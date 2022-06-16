@@ -1,4 +1,4 @@
-site_name: django-user-swap documentation
+site_name: django-swap-user documentation
 
 nav:
     - overview 🚏:
@@ -7,8 +7,8 @@ nav:
         - one time passwords 🧨: otp_models.md
 
 
-repo_name: artinnok/django-user-swap
-repo_url: https://github.com/artinnok/django-user-swap
+repo_name: artinnok/django-swap-user
+repo_url: https://github.com/artinnok/django-swap-user
 
 theme:
   name: material
@@ -93,7 +93,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/artinnok/django-user-swap
+      link: https://github.com/artinnok/django-swap-user
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/django-swap-user/
 
