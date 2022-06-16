@@ -8,6 +8,7 @@ authors = ["Skonik <skonik@evrone.com>"]
 python = "^3.9"
 mkdocs = "^1.3.0"
 mkdocs-material = "^8.3.4"
+mkdocs-video = "^1.3.0"
 
 [tool.poetry.dev-dependencies]
 

@@ -110,3 +110,6 @@ extra_javascript:
 
 
 edit_uri: ""
+
+plugins:
+    - mkdocs-video

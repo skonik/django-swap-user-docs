@@ -44,14 +44,14 @@ your `INSTALLED_APPS` to the one below:
 
 === ":material-email-lock: to_email_otp"
 
-    ``` python
-    AUTH_USER_MODEL = "swap_user.to_email_otp.apps.SiteConfig"
+    ``` python hl_lines="2 3"
+    "swap_user.apps.OTPSiteConfig",
     ```
 
 === ":material-phone-lock: to_phone_otp"
 
     ``` python
-    AUTH_USER_MODEL = "swap_user.to_phone_otp.apps.SiteConfig"
+    "swap_user.apps.OTPSiteConfig",
     ```
 
 ---
@@ -70,3 +70,86 @@ your `INSTALLED_APPS` to the one below:
     ```
 
 ---
+
+### Step 4 - install redis cache libraries
+=== "older than django 4.0"
+
+    ``` sh
+    pip install django-redis redis
+    ```
+
+=== "django 4.0 or later"
+
+    ``` sh
+    pip install redis
+    ```
+
+---
+
+### Step 5 - set redis as cache in settings
+=== "older than django 4.0"
+
+    ``` python
+    CACHES = {
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": "redis://127.0.0.1:6379/1",
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            }
+        }
+    }
+    ```
+
+=== "django 4.0 or later"
+
+    ``` python
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+            'LOCATION': 'redis://127.0.0.1:6379',
+        }
+    }
+    ```
+
+---
+
+### Step 6 - set sender class
+
+=== ":material-email-lock: to_email_otp"
+
+    ``` python
+    SWAP_USER = {
+        "OTP_SENDER_CLASS": "swap_user.otp.senders.EmailOTPSender",
+    }
+    ```
+
+=== ":material-phone-lock: to_phone_otp"
+
+    ``` python
+    # For phones otp you need to define your own sender class
+    # sender.py
+    from swap_user.otp.senders import AbstractOTPSender
+
+    class MyPhoneOTPSender(AbstractOTPSender):
+
+        def send(self, receiver: str, otp: str, **kwargs):
+            # implement your logic here.
+            # For example, interaction with sms/push API.
+            pass
+
+    ...
+    # settings.py
+    SWAP_USER = {
+        "OTP_SENDER_CLASS": "<path_to_your_sender_class>",
+    }
+    ```
+
+---
+
+
+### Email OTP showcase - login into the admin
+
+![type:video](./media/videos/to_email_otp_admin.mp4)
+
+
