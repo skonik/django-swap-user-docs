@@ -28,14 +28,14 @@ Successfully installed django-swap-user
 
 Swap to user model with `email` or `phone` fields as username
 
-[:octicons-arrow-right-24: Getting started ](/django-swap-user-docs/swap_models)
+[:octicons-arrow-right-24: Getting started ](./swap_models)
 
 ***
 :material-email-lock:/:material-phone-lock:
 
 Extend swapped user model with one time password
 
-[:octicons-arrow-right-24: Getting started ](/django-swap-user-docs/otp_models)
+[:octicons-arrow-right-24: Getting started ](./otp_models)
 
 
 
