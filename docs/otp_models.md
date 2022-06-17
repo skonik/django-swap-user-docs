@@ -2,6 +2,13 @@ One time password(OTP) functionality allows you not to store passwords in your d
 It lets to generate passwords valid for a certain amount of time and usable only once.
 It uses redis to store and retrieve one time passwords.
 
+![Email and Phone OTP](./media/images/otp_1.jpeg)
+
+
+## OTP models
+OTP models are almost the same as other swap models.
+The key difference is that they don't have password fields.
+
 ![Email and Phone OTP](./media/images/django_user_swap_02.jpeg)
 
 To use specified model with OTP functionality follow the steps below.
