@@ -2,24 +2,23 @@ name: Publish docs via GitHub Pages
 on:
   push:
     branches:
-      - master
+      - fix-ci
 
 jobs:
   build:
     name: Deploy docs
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main
+      - name: Checkout
         uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
           python-version: 3.9
       - name: Run image
         uses: abatilo/actions-poetry@v2.0.0
-      - name: Freeze deps
-        run: poetry export -f requirements.txt
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        run: poetry export -f requirements.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
