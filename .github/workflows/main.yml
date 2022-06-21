@@ -16,15 +16,12 @@ jobs:
           python-version: 3.9
       - name: Run image
         uses: abatilo/actions-poetry@v2.0.0
+      - name: Freeze deps
+        run: poetry export -f requirements.txt
       - name: Deploy docs
+        uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          poetry install 
-          git remote set-url origin https://skonik:$GITHUB_TOKEN@github.com/skonik/django-swap-user-docs.git
-          poetry run mkdocs gh-deploy
-
-
 
 
 
