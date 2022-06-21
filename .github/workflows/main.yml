@@ -16,8 +16,6 @@ jobs:
           python-version: 3.9
       - name: Run image
         uses: abatilo/actions-poetry@v2.0.0
-        with:
-          poetry-version: 3.9
       - name: Deploy docs
         run: poetry run mkdocs gh-deploy
 
