@@ -17,7 +17,7 @@ jobs:
       - name: Run image
         uses: abatilo/actions-poetry@v2.0.0
       - name: Deploy docs
-        run: poetry run mkdocs gh-deploy
+        run: poetry install && poetry run mkdocs gh-deploy
 
 
 
