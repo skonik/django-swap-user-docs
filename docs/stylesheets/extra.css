@@ -1,3 +1,14 @@
 [data-md-color-scheme="special"] {
   --md-primary-fg-color:        #404e8f;
+  --md-code-font-family: "JetBrainsMono",     var(--md-code-font, _),
+    SFMono-Regular, Consolas, Menlo, monospace;
 }
+
+@font-face {
+  font-family: "JetBrainsMono";
+  font-face-name: "JetBrainsMono";
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

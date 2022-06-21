@@ -1,4 +1,5 @@
-# Overview
+![Logo](./media/images/django-swap-user.png)
+
 This package  allows you easily change your default user's fields to email or phone along with additional functionality such as one time passwords.
 ✨🐍
 
