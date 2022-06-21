@@ -6,10 +6,18 @@ nav:
         - 🔧 swap models: swap_models.md
         - 🧨 one time passwords : otp_models.md
         - ⚙️ settings: settings.md
+    - 📖 Code API:
+      - swap_user.otp.services: code_api/otp_services.md
+      - swap_user.otp.senders: code_api/otp_senders.md
+      - swap_user.otp.forms: code_api/otp_forms.md
+      - swap_user.otp.views: code_api/otp_views.md
 
 
 repo_name: artinnok/django-swap-user
 repo_url: https://github.com/artinnok/django-swap-user
+
+
+
 
 theme:
   logo: media/images/django-swap-user-logo.svg
@@ -115,3 +123,4 @@ edit_uri: ""
 
 plugins:
     - mkdocs-video
+    - mkdocstrings
