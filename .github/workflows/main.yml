@@ -16,9 +16,10 @@ jobs:
           python-version: 3.9
       - name: Run image
         uses: abatilo/actions-poetry@v2.0.0
+      - name: Freeze deps
+        run: poetry export -f requirements.txt --output requirements.txt
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        run: poetry export -f requirements.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
